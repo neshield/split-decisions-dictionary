@@ -1,0 +1,23 @@
+{
+  "name": "split-decisions-dictionary",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neshield/split-decisions-dictionary.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/neshield/split-decisions-dictionary/issues"
+  },
+  "homepage": "https://github.com/neshield/split-decisions-dictionary#readme",
+  "dependencies": {
+    "dictionary-en-us": "^2.0.0"
+  }
+}
