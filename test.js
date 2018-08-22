@@ -1,19 +1,14 @@
-const assert = require('chai').assert
-const wordsByLength = require('./words-by-length')
+const assert = require('assert')
+const wordsByLength = require('./index.js')
 
 describe('Get Words Of Length', function () {
+  // TODO: Test alphabetical order and total word count
+
   // Test these two lengths because the arrays are shorter,
   // making it easier to write the test
-  it('should return the correct array for length 25', function () {
-    return wordsByLength.getWordsOfLength(25).then((words) => {
-      assert.sameOrderedMembers(words,
-         [ 'immunoelectrophoretically', 'phosphatidylethanolamines' ])
-    })
-  })
-
   it('should return the correct array for length 24', function () {
     return wordsByLength.getWordsOfLength(24).then((words) => {
-      assert.sameOrderedMembers(words,
+      assertArrayEquals(words,
         [ 'dichlorodifluoromethanes',
           'electrocardiographically',
           'electroencephalographers',
@@ -25,4 +20,23 @@ describe('Get Words Of Length', function () {
           'phosphatidylethanolamine' ])
     })
   })
+
+  it('should return the correct array for length 25', function () {
+    return wordsByLength.getWordsOfLength(25).then((words) => {
+      assertArrayEquals(words,
+         [ 'immunoelectrophoretically', 'phosphatidylethanolamines' ])
+    })
+  })
 })
+
+function assertArrayEquals (actual, expected) {
+  if (actual.length !== expected.length) {
+    assert.fail('actual and expected had different lengths')
+  }
+
+  actual.forEach((val, i) => {
+    if (val !== expected[i]) {
+      assert.fail(`values at index ${i} did not match`)
+    }
+  })
+}
