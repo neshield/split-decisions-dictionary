@@ -1,7 +1,5 @@
 const fse = require('fs-extra')
 
-const wordsByLength = {}
-
 let wordsMap = null
 
 function loadWordsMap () {
@@ -15,10 +13,10 @@ function loadWordsMap () {
   }
 }
 
-wordsByLength.getWordsOfLength = function (wordLength) {
+const wordsOfLength = function (wordLength) {
   return loadWordsMap().then((wordsMap) => {
     return wordsMap.get(wordLength)
   })
 }
 
-module.exports = wordsByLength
+module.exports = wordsOfLength
