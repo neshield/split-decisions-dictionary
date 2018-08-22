@@ -1,1 +1,1 @@
-module.exports = require('./words-by-length')
+module.exports = require('./words-of-length')

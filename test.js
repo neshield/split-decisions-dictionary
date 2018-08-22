@@ -1,5 +1,5 @@
 const assert = require('assert')
-const wordsByLength = require('./index.js')
+const wordsOfLength = require('./index.js')
 
 describe('Get Words Of Length', function () {
   // TODO: Test alphabetical order and total word count
@@ -7,7 +7,7 @@ describe('Get Words Of Length', function () {
   // Test these two lengths because the arrays are shorter,
   // making it easier to write the test
   it('should return the correct array for length 24', function () {
-    return wordsByLength.getWordsOfLength(24).then((words) => {
+    return wordsOfLength(24).then((words) => {
       assertArrayEquals(words,
         [ 'dichlorodifluoromethanes',
           'electrocardiographically',
@@ -22,7 +22,7 @@ describe('Get Words Of Length', function () {
   })
 
   it('should return the correct array for length 25', function () {
-    return wordsByLength.getWordsOfLength(25).then((words) => {
+    return wordsOfLength(25).then((words) => {
       assertArrayEquals(words,
          [ 'immunoelectrophoretically', 'phosphatidylethanolamines' ])
     })
